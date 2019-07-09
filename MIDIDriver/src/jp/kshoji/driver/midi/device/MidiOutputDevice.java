@@ -100,7 +100,7 @@ public final class MidiOutputDevice {
     /**
      * Get the product name
      *
-     * @return the product name. null if API Level < {@link android.os.Build.VERSION_CODES#HONEYCOMB_MR2 }, or the product name is truly null
+     * @return the product name. null if API Level < {@link Build.VERSION_CODES#HONEYCOMB_MR2 }, or the product name is truly null
      */
     @Nullable
     public String getProductName() {
@@ -110,7 +110,7 @@ public final class MidiOutputDevice {
     /**
      * Get the manufacturer name
      *
-     * @return the manufacturer name. null if API Level < {@link android.os.Build.VERSION_CODES#HONEYCOMB_MR2 }, or the manufacturer name is truly null
+     * @return the manufacturer name. null if API Level < {@link Build.VERSION_CODES#HONEYCOMB_MR2 }, or the manufacturer name is truly null
      */
     @Nullable
     public String getManufacturerName() {
@@ -220,15 +220,15 @@ public final class MidiOutputDevice {
                                 // loop until transfer completed
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
                                     // JELLY_BEAN_MR2 supports bulkTransfer with offset
-                                    bytesWritten = usbDeviceConnection.bulkTransfer(outputEndpoint, dequedDataBuffer, bufferPosition, endpointBufferLength, 10);
+                                    bytesWritten = usbDeviceConnection.bulkTransfer(outputEndpoint, dequedDataBuffer, bufferPosition, endpointBufferLength, 50);
                                 } else {
                                     if (bufferPosition > 0) {
                                         // copy the fragment to the endpointBuffer before transfer
                                         System.arraycopy(dequedDataBuffer, bufferPosition, endpointBuffer, 0, endpointBufferLength);
-                                        bytesWritten = usbDeviceConnection.bulkTransfer(outputEndpoint, endpointBuffer, endpointBufferLength, 10);
+                                        bytesWritten = usbDeviceConnection.bulkTransfer(outputEndpoint, endpointBuffer, endpointBufferLength, 50);
                                     } else {
                                         // it's the first fragment.. copy is not required
-                                        bytesWritten = usbDeviceConnection.bulkTransfer(outputEndpoint, dequedDataBuffer, endpointBufferLength, 10);
+                                        bytesWritten = usbDeviceConnection.bulkTransfer(outputEndpoint, dequedDataBuffer, endpointBufferLength, 50);
                                     }
                                 }
 
