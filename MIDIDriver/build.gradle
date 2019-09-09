@@ -44,5 +44,6 @@ android {
 dependencies {
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation fileTree(dir: 'libs', include: '*.jar')
-    api project(path: ':javax.sound.midi')
+    // api project(path: ':javax.sound.midi')
+    api 'com.github.kitaharalab:javax.sound.midi-for-Android:javax.sound.midi:develop-SNAPSHOT'
 }
