@@ -1,7 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'  
-
-group='com.github.kitaharalab'
 
 println("MIDIDriver build.gradle")
 println(rootProject.name)
@@ -50,3 +47,5 @@ dependencies {
     // api project(path: ':javax.sound.midi')
     api 'com.github.kitaharalab:javax.sound.midi-for-Android:javax.sound.midi:develop-SNAPSHOT'
 }
+
+apply from: 'https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/master/gradle-mavenizer.gradle'
