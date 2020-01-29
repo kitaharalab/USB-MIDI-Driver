@@ -1,5 +1,5 @@
 // include ':MIDIDriverSample'
 include ':MIDIDriver'
-include ':javax.sound.midi'
-project(':javax.sound.midi').projectDir = file('../javax.sound.midi-for-Android/javax.sound.midi')
+// include ':javax.sound.midi'
+// project(':javax.sound.midi').projectDir = file('../javax.sound.midi-for-Android/javax.sound.midi')
 
