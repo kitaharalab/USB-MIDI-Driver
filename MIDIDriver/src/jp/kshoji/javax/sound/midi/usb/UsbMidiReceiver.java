@@ -1,7 +1,7 @@
 package jp.kshoji.javax.sound.midi.usb;
 
 
-import androidx.annotation.NonNull;
+import android.support.annotation.NonNull;
 
 import jp.kshoji.driver.midi.device.MidiOutputDevice;
 import jp.kshoji.javax.sound.midi.MetaMessage;

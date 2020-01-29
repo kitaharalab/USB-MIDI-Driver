@@ -9,8 +9,8 @@ import android.hardware.usb.UsbInterface;
 import android.os.Build;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Collections;

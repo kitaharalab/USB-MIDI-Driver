@@ -3,7 +3,7 @@ package jp.kshoji.driver.midi.util;
 import android.content.Context;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
-import androidx.annotation.NonNull;
+import android.support.annotation.NonNull;
 
 import java.util.Collections;
 import java.util.HashSet;

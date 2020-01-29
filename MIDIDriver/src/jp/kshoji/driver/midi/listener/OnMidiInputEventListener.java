@@ -1,6 +1,6 @@
 package jp.kshoji.driver.midi.listener;
 
-import androidx.annotation.NonNull;
+import android.support.annotation.NonNull;
 
 import jp.kshoji.driver.midi.device.MidiInputDevice;
 
