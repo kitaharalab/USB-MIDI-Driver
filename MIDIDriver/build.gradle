@@ -1,15 +1,17 @@
 apply plugin: 'com.android.library'
 
-println("MIDIDriver build.gradle")
-println(rootProject.name)
-println(rootProject.subprojects)
+version = '0.1.6-kitaharalab'
+
+//println("MIDIDriver build.gradle")
+//println(rootProject.name)
+//println(rootProject.subprojects)
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 30
 
     defaultConfig {
         minSdkVersion 27
-        targetSdkVersion 28
+        targetSdkVersion 30
     }
 
     sourceSets {
@@ -47,5 +49,31 @@ dependencies {
      api project(path: ':javax.sound.midi')
 //    api 'com.github.kitaharalab:javax.sound.midi-for-Android:javax.sound.midi:develop-SNAPSHOT'
 }
+
+afterEvaluate {
+    publishing {
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = "https://maven.pkg.github.com/kitaharalab/cmx"
+                credentials {
+                    username = System.getenv("GITHUB_ACTOR")
+                    password = System.getenv("GITHUB_TOKEN")
+                }
+            }
+        }
+        publications {
+            release(MavenPublication) {
+                from components.release
+                artifactId = "${artifactId}-release"
+            }
+            debug(MavenPublication) {
+                from components.debug
+                artifactId = "${artifactId}-debug"
+            }
+        }
+    }
+}
+
 
 apply from: 'https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/master/gradle-mavenizer.gradle'
