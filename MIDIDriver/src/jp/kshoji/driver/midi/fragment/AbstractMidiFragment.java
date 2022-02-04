@@ -5,7 +5,7 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import java.util.Collections;
 import java.util.HashSet;
