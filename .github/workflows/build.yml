@@ -1,4 +1,4 @@
-name: Build javax.sound.midi-for-Android CI
+name: Build MIDIDriver CI
 
 on: [push, workflow_dispatch]
 
@@ -6,6 +6,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    permissions: 
+      packages: read
 
     steps:
     - uses: actions/checkout@v1
