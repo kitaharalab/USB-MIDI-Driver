@@ -81,11 +81,11 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                artifactId = "${artifactId}-release"
+                artifactId = "${artifactId.toLowerCase()}-release"
             }
             debug(MavenPublication) {
                 from components.debug
-                artifactId = "${artifactId}-debug"
+                artifactId = "${artifactId.toLowerCase()}-debug"
             }
         }
     }
