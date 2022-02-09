@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions: 
       packages: read
+      metadata: read
 
     steps:
     - uses: actions/checkout@v1
