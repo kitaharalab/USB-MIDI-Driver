@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions: 
       packages: read
-      metadata: read
 
     steps:
     - uses: actions/checkout@v1
@@ -19,6 +18,8 @@ jobs:
     - run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew -p MIDIDriver build
+      env: 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v1
       with:
