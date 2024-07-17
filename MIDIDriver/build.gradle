@@ -49,13 +49,13 @@ android {
 
     repositories{
         maven {
-            // name = "GitHubPackages"
-            // url = uri("https://maven.pkg.github.com/kitaharalab/javax.sound.midi-for-Android")
-            // credentials {
-            //     username = project.findProperty("ext.user") ?: System.getenv("GITHUB_ACTOR")
-            //     password =  project.findProperty("ext.token") ?: System.getenv("GITHUB_TOKEN")
-            // }
-            url "https://raw.github.com/kitaharalab/javax.sound.midi-for-Android/repository/"
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/kitaharalab/javax.sound.midi-for-Android")
+            credentials {
+                username = project.findProperty("ext.user") ?: System.getenv("GITHUB_ACTOR")
+                password =  project.findProperty("ext.token") ?: System.getenv("GITHUB_TOKEN")
+            }
+            // url "https://raw.github.com/kitaharalab/javax.sound.midi-for-Android/repository/"
         }
     }
 
